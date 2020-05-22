@@ -27,7 +27,7 @@ describe 'GildedRose' do
   end
 
   it 'aged Brie should increase its quality by two' do
-      parametric_test_case("Aged Brie", -1, 47, -2, 50)
+      parametric_test_case("Aged Brie", -1, 48, -2, 50)
   end
 
   it 'sulfuras is legendary' do
