@@ -2,88 +2,88 @@ require './gilded_rose'
 require './item'
 
 describe 'GildedRose' do
-  it 'should degradated one unit in one item' do
-    parametricTestCase("foo", 1, 1, 0, 0)
+  it 'should degradated a normal item' do
+    parametric_test_case("foo", 1, 1, 0, 0)
   end 
 
   it 'should not update item with quaility of sixty' do
-    parametricTestCase("foo", 1, 60, 0, 59)
+    parametric_test_case("foo", 1, 60, 0, 59)
   end
 
-  it 'deberia Mantener La Calidad En Cero' do
-    parametricTestCase("foo", 1, 0, 0, 0)
+  it 'should keep the quality in zero' do
+    parametric_test_case("foo", 1, 0, 0, 0)
   end
 
-    it 'si El Dia De Venta Llega La Degradacion Se Duplica' do
-        parametricTestCase("foo", 0, 30, -1, 28)
-    end
-
-    it 'Aged Brie Increases Quality' do
-        parametricTestCase("Aged Brie", 10, 30, 9, 31)
-    end
-
-    it 'quality Is Never Greater Than 50' do
-        parametricTestCase("Aged Brie", 10, 50, 9, 50)
-    end
-
-    it 'aged Brie Incrementa Su Calidad Despues De La fecha De Venta' do
-        parametricTestCase("Aged Brie", -1, 48, -2, 50)
-    end
-
-    it 'sulfuras No Debe Degradarse Ni Modificar Los Dias' do
-        parametricTestCase("Sulfuras, Hand of Ragnaros", 10, 80, 10, 80)
-    end
-    it 'backstage Passes Increases Quality' do
-        parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 12, 30, 11, 31)
-    end
-    it 'backstage Passes Increases Quality By One With sell_in Is 11' do
-        parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 11, 30, 10, 31)
-    end
-    it 'backstage Passes Increases By Two When Sell In Is Ten Or Less' do
-        parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 10, 30, 9, 32)
-        parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 9, 30, 8, 32)
-    end
-
-    it 'backstage Passes Increases By 3 When Sell In Is 5O or Less' do
-        parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 5, 30, 4, 33)
-        parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 4, 30, 3, 33)
-    end
-
-    it 'backstage Passes Increases By 2 When Sell In Is 6' do
-        parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 6, 30, 5, 32)
-    end
-
-    it 'backstage Passes Reduce Su Calidad Cuando Llega El dia Final' do
-        parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 0, 10, -1, 0)
-    end
-   it 'backstage Passes Increases By 3 When Sell In Is One' do
-      parametricTestCase("Backstage passes to a TAFKAL80ETC concert", 1, 10, 0, 13)
+  it 'should degradated the quality by two' do
+      parametric_test_case("foo", 0, 30, -1, 28)
   end
-    
-    #it 'Conjured Mana Cake Should Degrade Twice as fast as normal items before sell_in' do
-    #  parametricTestCase("Conjured Mana Cake", 1, 10, 0, 8)
-    #end
 
-    #it 'Conjured Wand item should degrade twice as fast as normal items' do
-    #  parametricTestCase("Conjured Wand", 1, 10, 0, 8)
-    #end
+  it 'Aged Brie Increases Quality' do
+      parametric_test_case("Aged Brie", 10, 30, 9, 31)
+  end
+
+  it 'quality Is Never Greater Than 50' do
+      parametric_test_case("Aged Brie", 10, 50, 9, 50)
+  end
+
+  it 'aged Brie should increase its quality by two' do
+      parametric_test_case("Aged Brie", -1, 48, -2, 50)
+  end
+
+  it 'sulfuras is legendary' do
+      parametric_test_case("Sulfuras, Hand of Ragnaros", 10, 80, 10, 80)
+  end
+  it 'backstage Passes Increases Quality' do
+      parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 12, 30, 11, 31)
+  end
+  it 'backstage Passes Increases Quality By One With sell_in Is 11' do
+      parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 11, 30, 10, 31)
+  end
+  it 'backstage Passes Increases By Two When Sell In Is Ten Or Less' do
+      parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 10, 30, 9, 32)
+      parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 9, 30, 8, 32)
+  end
+
+  it 'backstage Passes Increases By 3 When Sell In Is 5O or Less' do
+      parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 5, 30, 4, 33)
+      parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 4, 30, 3, 33)
+  end
+
+  it 'backstage Passes Increases By 2 When Sell In Is 6' do
+      parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 6, 30, 5, 32)
+  end
+
+  it 'backstage Passes Reduce Su Calidad Cuando Llega El dia Final' do
+      parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 0, 10, -1, 0)
+  end
+  it 'backstage Passes Increases By 3 When Sell In Is One' do
+    parametric_test_case("Backstage passes to a TAFKAL80ETC concert", 1, 10, 0, 13)
+end
+  
+  #it 'Conjured Mana Cake Should Degrade Twice as fast as normal items before sell_in' do
+  #  parametric_test_case("Conjured Mana Cake", 1, 10, 0, 8)
+  #end
+
+  #it 'Conjured Wand item should degrade twice as fast as normal items' do
+  #  parametric_test_case("Conjured Wand", 1, 10, 0, 8)
+  #end
 
     # Pruebas que faltan
 
-    #it 'Conjured Wand item should degrade twice as fast as normal items' do
-    #  parametricTestCase("Conjured Wand", 1, 10, 0, 8)
-    #end
+  #it 'Conjured Wand item should degrade twice as fast as normal items' do
+  #  parametric_test_case("Conjured Wand", 1, 10, 0, 8)
+  #end
 
-    
-    # a. Items conjured hasta 0 de calidad.
-    #it 'Conjured item with quality 0 cant decrease its quality any more ' do
-    #  parametricTestCase("Conjured Wand", 1, 0, 0, 0)
-    #end
+  
+  # a. Items conjured hasta 0 de calidad.
+  #it 'Conjured item with quality 0 cant decrease its quality any more ' do
+  #  parametric_test_case("Conjured Wand", 1, 0, 0, 0)
+  #end
 
-    # b. 
-    #it 'Conjured item with quality 1 shouldnt have a negative quality after one day' do
-    #  parametricTestCase("Conjured Wand", 1, 1, 0, 0)
-    #end
+  # b. 
+  #it 'Conjured item with quality 1 shouldnt have a negative quality after one day' do
+  #  parametric_test_case("Conjured Wand", 1, 1, 0, 0)
+  #end
 
   it 'multiple items works successfully' do
     items = []
@@ -126,17 +126,17 @@ describe 'GildedRose' do
 
   end
 
-  def parametricTestCase name, initialsell_in, initialQuality,expectedsell_in, expectedQuality
+  def parametric_test_case name, initial_sell_in, initial_quality,expected_sell_in, expected_quality
     items = []
-    items.push Item.new name, initialsell_in, initialQuality
+    items.push Item.new name, initial_sell_in, initial_quality
 
     app = GildedRose.new 
 
     app.update_quality items
 
     expect(items[0].name).to eq name
-    expect(items[0].quality).to eq expectedQuality
-    expect(items[0].sell_in).to eq expectedsell_in
+    expect(items[0].quality).to eq expected_quality
+    expect(items[0].sell_in).to eq expected_sell_in
     
   end 
 
