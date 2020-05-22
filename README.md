@@ -1,3 +1,7 @@
+![](https://github.com/yamitcar/gilded-rose-ruby/workflows/Ruby/badge.svg)
+![](https://github.com/yamitcar/gilded-rose-ruby/workflows/Ruby/badge.svg?branch=withTest)
+
+
 # Especificaciones de la Rosa Dorada (Gilded Rose)
 
 Bienvenido al equipo de **Gilded Rose**.
