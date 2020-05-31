@@ -32,8 +32,12 @@ jobs:
     - name: Run tests
       run: rspec
     - name: Check rubycritic
-      run: rubycritic -f console
-    - name: Rubocop Linter Action
-      uses: andrewmcodes/rubocop-linter-action@v3.2.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: rubycritic -f html --no-browser
+    - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: tmp/rubycritic/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
