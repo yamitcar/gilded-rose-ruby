@@ -58,4 +58,4 @@ jobs:
       if: ${{ failure() }}
       uses: Ilshidur/action-discord@759f6ea4dc493b8bd1bb35ae7fbd7ae10fcea129
       with:
-        args: 'UPS....{{ EVENT_PAYLOAD.repository.full_name }} something fails, please check your Test!.'
+        args: 'UPS something fails in {{ EVENT_PAYLOAD.repository.full_name }}, please check the IC flow!.'
