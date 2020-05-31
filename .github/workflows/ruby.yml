@@ -33,6 +33,8 @@ jobs:
       run: rspec
     - name: Check rubycritic
       run: rubycritic -f html --no-browser
+    - name: Rename index
+      run: mv tmp/rubycritic/overview.html  tmp/rubycritic/index.html
     - name: Deploy to GitHub Pages
       if: success()
       uses: crazy-max/ghaction-github-pages@v2
