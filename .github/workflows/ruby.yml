@@ -31,7 +31,7 @@ jobs:
       run: bundle install
     - name: Run tests
       run: rspec
-    - name: Rubocop checks
-      uses: gimenete/rubocop-action@1.0
+    - name: StandardRB Linter
+      uses: andrewmcodes/standardrb-action@v0.0.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
