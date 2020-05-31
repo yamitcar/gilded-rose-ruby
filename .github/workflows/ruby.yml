@@ -35,11 +35,11 @@ jobs:
       run: rubycritic -f html --no-browser
     - name: update index
       run: |
-      cat > tmp/rubycritic/index.md <<EOL
-      ---
-        permalink: /overview.html
-      ---
-      EOL
+        cat > tmp/rubycritic/index.md <<EOL
+        ---
+          permalink: /overview.html
+        ---
+        EOL
     - name: Deploy to GitHub Pages
       if: success()
       uses: crazy-max/ghaction-github-pages@v2
