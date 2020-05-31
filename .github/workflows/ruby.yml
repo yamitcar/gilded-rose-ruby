@@ -31,3 +31,5 @@ jobs:
       run: bundle install
     - name: Run tests
       run: rspec
+    - name: Rubocop checks
+      uses: gimenete/rubocop-action@1.0
