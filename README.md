@@ -3,6 +3,9 @@
 withTest:  
 ![](https://github.com/yamitcar/gilded-rose-ruby/workflows/Ruby/badge.svg?branch=withTest)
 
+para ver el reporte de analisis de codigo:
+
+https://yamitcar.github.io/gilded-rose-ruby/
 
 # Especificaciones de la Rosa Dorada (Gilded Rose)
 
