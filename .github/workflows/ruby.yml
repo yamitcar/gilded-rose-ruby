@@ -14,7 +14,7 @@ on:
     branches: [ master, withTest  ]
 
 jobs:
-  test:
+  IC:
 
     runs-on: ubuntu-latest
 
